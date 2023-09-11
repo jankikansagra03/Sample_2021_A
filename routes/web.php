@@ -25,4 +25,4 @@ Route::view('login', 'login');
 Route::view('register', 'register');
 Route::view('gallery', 'events');
 Route::post('Insert_registration', [Befor_loginController::class, 'insert_registration']);
-Route::get('account_activation/{email}',[Befor_loginController::class, 'account_activation'])
+Route::get('account_activation/{email}',[Befor_loginController::class, 'account_activation']);
