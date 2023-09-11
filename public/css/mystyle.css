@@ -1,0 +1,85 @@
+button {
+    background-color: white;
+    height: 45px;
+    width: 200px;
+    color: red;
+    border-radius: 10px;
+    font-size: large;
+    border-color: white;
+    padding: 5px;
+    margin: 5px;
+}
+
+.contact_card {
+    background-color: lightgrey;
+}
+
+.navbar-dark {
+    background-color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: red;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid red;
+    padding: 10px;
+}
+
+
+a.footer {
+    color: white;
+}
+
+.navbar-dark .navbar-nav .active1 {
+    color: red;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid red;
+    padding: 10px;
+}
+
+.line {
+    padding-bottom: 10px;
+    border-bottom-style: solid;
+    border-bottom-width: 3.1px;
+    border-bottom-color: red;
+    width: fit-content;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid black;
+}
+
+.pagination a.active {
+    background-color: red;
+    color: white;
+    border-color: white;
+    ;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: skyblue;
+}
+
+div.scrollable {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
