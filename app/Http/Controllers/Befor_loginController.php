@@ -36,7 +36,7 @@ class Befor_loginController extends Controller
             'pic.mimes' => 'Select JPG,PNG,GIF,BMP Files only'
         ];
         $request->validate($rules, $error_msg);
-        //return redirect("{{URL::to('register')}}");
+
 
         $register = new Registration();
 
@@ -53,10 +53,31 @@ class Befor_loginController extends Controller
                 $message->to($data['em'], $data['fn']);
                 $message->from("janki.kansagra@rku.ac.in", "Janki Kansagra");
             });
+            session()->flash('success', 'Your account is createdc successfully and activation link is sent to registered email address');
+        } else {
+            session()->flash('error', 'Error in creating account. please try again later');
         }
+        return redirect("{{URL::to('register')}}");
     }
 
     public function account_activation($email)
     {
+        $result = Registration::whereEmail($email)->first();
+        if (empty($result)) {
+            session()->flash('error', 'Your account is not registered. kindly register here.');
+            return redirect('register');
+        } else {
+            if ($result->status == 'Active') {
+                session()->flash('success', 'Your account is already activated kindly login');
+            } else {
+                $update = Registration::where('email', $email)->update(array('status' => 'Active'));
+                if ($update) {
+                    session()->flash('success', 'Your account is activated successfully. kindly login');
+                } else {
+                    session()->flash('error', 'Account activation failed please try after sometime.');
+                }
+            }
+            return redirect('login');
         }
+    }
 }
